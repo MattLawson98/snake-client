@@ -13,6 +13,10 @@ const connect = function () {
   });
   conn.on('connect', () => {
     conn.write("Name: MJL");
+    conn.write("Move: up");
+    setInterval(() => {
+     conn.write("Move: up")
+    }, 50);
   });
   conn.on('data',(messagefromserver) => {
     console.log('message from server:', messagefromserver);
